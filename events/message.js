@@ -9,7 +9,7 @@ module.exports = async (client, message) => {
 
   
   // Verification Site
-  if (message.channel.id === "738784380130033776") { // Verification Text Channel
+  if (message.channel.id === "738784368763338842") { // Verification Text Channel
     // Re-send Code System
     if (message.content.startsWith("resend")) {
       let code = db.get(`verification.${message.author.id}`);

@@ -1,4 +1,4 @@
-module.exports = async (client, member) => {
+module.exports = async (client, member, message) => {
   const db = require("quick.db");
   const Discord = require("discord.js");
 
@@ -9,11 +9,9 @@ module.exports = async (client, member) => {
   let number = randomInteger(100000, 1000000);
   // The number will be shuffled from the range 100K - 1M
 
-  let verifyChannel = member.guild.channels.cache.find(ch => ch.id === "727597528027234354");
+  let verifyChannel = member.guild.channels.cache.find(ch => ch.id === "738784368763338842");
   // Your Verification Text Channel.
-
   await db.set(`verification.${member.user.id}`, number);
-
   const dm = new Discord.MessageEmbed()
     .setColor(0x7289DA)
     .setTitle(`Welcome to ${member.guild.name}!`)
